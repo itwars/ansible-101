@@ -8,7 +8,7 @@ The LAB is made of 3 containers to be managed by Ansible:
 
 - Docker Debian
 - Docker Ubuntu
-- Docker Centos
+- Docker Alpine
 
 Plus a Docker Ansible, to have and avoid installing Ansible on your laptop.
 
@@ -16,9 +16,9 @@ Plus a Docker Ansible, to have and avoid installing Ansible on your laptop.
 
 To bootstrap this tutorial, I wrote and [init script](https://github.com/itwars/ansible-101/blob/master/ansible-cli/init.sh), by doing following tasks:
 
-- Delete previous 3 containers Debian, Ubuntu et Centos
+- Delete previous 3 containers Debian, Ubuntu et Alpine
 - Create an RSA key allowing Ansible connection through SSH
-- Starting 3 instances Docker Debian, Docker Ubuntu, and Docker Centos
+- Starting 3 instances Docker Debian, Docker Ubuntu, and Docker Alpine
 - Ssh key injection in each Docker instance using ssh-copy-id (password will be ask: toor)
 - Ansible hosts inventory creation
 
