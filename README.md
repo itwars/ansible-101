@@ -14,7 +14,7 @@ Plus a Docker Ansible, to have and avoid installing Ansible on your laptop.
 
 ## Bootstrap Ansible LAB
 
-To bootstrap this tutorial, I wrote and [init script](https://github.com/itwars/ansible-101/blob/master/01-init-sshkey.sh), by doing following tasks:
+To bootstrap this tutorial, I wrote and [init script](https://github.com/itwars/ansible-101/blob/master/02-init-sshkey.sh), by doing following tasks:
 
 - Delete previous 3 containers Debian, Ubuntu et Alpine
 - Create an RSA key allowing Ansible connection through SSH
