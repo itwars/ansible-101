@@ -14,7 +14,7 @@ Plus a Docker Ansible, to have and avoid installing Ansible on your laptop.
 
 ## Bootstrap Ansible LAB
 
-To bootstrap this tutorial, I wrote and [init script](https://github.com/itwars/ansible-101/blob/master/ansible-cli/init.sh), by doing following tasks:
+To bootstrap this tutorial, I wrote and [init script](https://github.com/itwars/ansible-101/blob/master/01-init-sshkey.sh), by doing following tasks:
 
 - Delete previous 3 containers Debian, Ubuntu et Alpine
 - Create an RSA key allowing Ansible connection through SSH
@@ -25,7 +25,7 @@ To bootstrap this tutorial, I wrote and [init script](https://github.com/itwars/
 To "ping" our 3 nodes:
 
 ```
-docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa itwars/ansible-cli all -m ping
+docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli all -m ping
 ```
 
 ```
@@ -46,11 +46,11 @@ docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh
 To setup Nginx on Debian Ansible node:
 
 ```
-docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa itwars/ansible-cli debian -m apt -a "name=nginx state=present"
+docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli debian -m apt -a "name=nginx state=present"
 ```
 
 To start Nginx on Debian Ansible node:
 
 ```
-docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa itwars/ansible-cli debian -m service -a "name=nginx state=started"
+docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli debian -m service -a "name=nginx state=started"
 ```
