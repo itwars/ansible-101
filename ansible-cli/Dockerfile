@@ -7,5 +7,5 @@ RUN	set -x \
 	&& mkdir /root/.ssh \
 	&& rm -rf /var/cache/apk/* 
 ENV ANSIBLE_HOST_KEY_CHECKING=False
-ENTRYPOINT ["ansible"]
+#ENTRYPOINT ["ansible"]
 

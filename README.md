@@ -25,7 +25,7 @@ To bootstrap this tutorial, I wrote and [init script](https://github.com/itwars/
 To "ping" our 3 nodes:
 
 ```
-docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli all -m ping
+docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli ansible all -m ping
 ```
 
 ```
@@ -46,11 +46,11 @@ docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh
 To setup Nginx on Debian Ansible node:
 
 ```
-docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli debian -m apt -a "name=nginx state=present"
+docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli ansible debian -m apt -a "name=nginx state=present"
 ```
 
 To start Nginx on Debian Ansible node:
 
 ```
-docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli debian -m service -a "name=nginx state=started"
+docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli ansible debian -m service -a "name=nginx state=started"
 ```
