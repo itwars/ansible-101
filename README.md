@@ -28,6 +28,12 @@ To "ping" our 3 nodes:
 docker run -it --rm -v `pwd`/hosts:/etc/ansible/hosts -v `pwd`/id_rsa:/root/.ssh/id_rsa ansible-cli ansible all -m ping
 ```
 
+or shorter:
+
+```
+./ansible.sh ansible all -m ping 
+```
+
 ```
 172.17.0.3 | SUCCESS => {
     "changed": false,
